@@ -15,7 +15,7 @@
 - FFMPEG
 - CUDA  10.2
 - NVIDIA GPU arch:  30 35 37 50 52 60 61 70 75 
-- CUDA_ARCH_PTX = 75 (  forward compatibility : the container should work with **NVIDIA Ampere GPUs** `sm_80`. I did not test this case. Not sure )
+- CUDA_ARCH_PTX = 75 (  The container does not work with **NVIDIA Ampere GPUs** `sm_80`. For RTX series, The base image should be updated to at least CUDA 11.0 )
 - cuDNN:  7.6.5
 - OpenCL
 - Qt5::OpenGL  5.9.5
