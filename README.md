@@ -15,7 +15,7 @@
 - FFMPEG
 - CUDA  10.2
 - NVIDIA GPU arch:  30 35 37 50 52 60 61 70 75 
-- CUDA_ARCH_PTX = 75 (  The container does not work with **NVIDIA Ampere GPUs** `sm_80`. For RTX series, The base image should be updated to at least CUDA 11.0 )
+- CUDA_ARCH_PTX = 75 (  The container does not work with **NVIDIA Ampere GPUs** `sm_80`. For RTX 30 series, The base image should be updated to at least CUDA 11.0 )
 - cuDNN:  7.6.5
 - OpenCL
 - Qt5::OpenGL  5.9.5
@@ -67,11 +67,11 @@ Pull the image from here :
     Dockerfile  YOLOv4_cam.py  face_SSD.py     model_SSD   model_YOLOv4
     README.md   cv2_info.py    golden_axe.png  model_SURE  super_resolution.py
    ```
-3. Print out OpenCV build info into a textile, check out the produced output in your volume :
+3. Print out OpenCV build info into a textfile, check out the produced output in your volume :
    ```sh
    root@771c5bcb2895:/myapp# python3 cv2_info.py
    ```
-4. Test image Super-Resolution with the included [image](golden_axe.png), a SR image  `SURE_golden_axe.png`  will be produced in your volume :
+4.  Image Super-Resolution with OpenCV, Cuda and Docker :  the included [image](golden_axe.png), a SR image  `SURE_golden_axe.png`  will be produced in your volume by the following command  :
    ```sh
    root@771c5bcb2895:/myapp# python3 super_resolution.py 
    ```
@@ -87,7 +87,7 @@ For the next two examples, you need to include these commands to docker run :
 
 Note that I tested the above commands in UBUNTU. These may differ in other systems.
 
-5.  Real-time GPU accelerated face detection with OpenCV DNN and GStreamer
+5.  Real-time face detection with OpenCV DNN, GStreamer, CUDA and Docker :
     . Before running the container type in your CMD :
     ```sh
     $ xhost +
@@ -106,7 +106,7 @@ Note that I tested the above commands in UBUNTU. These may differ in other syste
 
 
 
-6.  Real-time object detection with YOLO v4, GStreamer and CUDA. First download [yolov4.weights](https://github.com/easyadin/Object-Detection-YOLOv4#pre-trained-models) and put it in it's [folder](model_YOLOv4). Following from the above:
+6.  Real-time object detection with YOLO v4, GStreamer, CUDA and Docker. First download [yolov4.weights](https://github.com/easyadin/Object-Detection-YOLOv4#pre-trained-models) and put it in it's [folder](model_YOLOv4). Following from the above:
 
     ```sh
     root@1be1f7efabf9:/myapp# python3 YOLOv4_cam.py 
