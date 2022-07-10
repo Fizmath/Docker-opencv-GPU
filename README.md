@@ -15,7 +15,7 @@
 - FFMPEG
 - CUDA  10.2
 - NVIDIA GPU arch:  30 35 37 50 52 60 61 70 75 
-- CUDA_ARCH_PTX = 75 (  The container does not work with **NVIDIA Ampere GPUs** `sm_86 `. For RTX 30 series, please try to update the base image to at least CUDA 11.0 . BUT ! there is also a bad bug in **dnn.DNN_TARGET_CUDA** with the latest cudnn 8+  which throws this error  ` initCUDABackend CUDA backend will fallback to the CPU implementation for the layer "_input" of type __NetInputLayer__ `  . Yet i coud not find any solution to update the dockerfile  )
+- CUDA_ARCH_PTX = 75 (  The container does not work with **NVIDIA Ampere GPUs** `sm_86 `. For RTX 30 series, please try to update the base image to CUDA 11+ with `-D CUDA_ARCH_BIN=8.6 \` in the Dockerfile )
 - cuDNN:  7.6.5
 - OpenCL
 - Qt5::OpenGL  5.9.5
