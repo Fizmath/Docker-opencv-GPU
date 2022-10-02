@@ -15,7 +15,7 @@
 - FFMPEG
 - CUDA  10.2
 - NVIDIA GPU arch:  30 35 37 50 52 60 61 70 75 
-- CUDA_ARCH_PTX = 75 (  The container does not work with **NVIDIA Ampere GPUs** `sm_86 `. For RTX 30 series, please try to update the base image to CUDA 11+ with `-D CUDA_ARCH_BIN=8.6 \` in the Dockerfile )
+- CUDA_ARCH_PTX = 75 (  The container does not work with **NVIDIA Ampere GPUs** `sm_86 `. For RTX 30 series, please see this [new repo](https://github.com/Fizmath/Docker-opencv-GPU-RTX_30))
 - cuDNN:  7.6.5
 - OpenCL
 - Qt5::OpenGL  5.9.5
@@ -145,4 +145,4 @@ You may modify, upgrade and build a proper one for your requirements :
 $ docker build -f Dockerfile -t <name>:<tag> .
 ```
 It won't be that straight-forward, you will get some deprecation warnings and compatibility issues. <br /> To keep the image light-weight and compatible with old GPU architectures `SM_30 , SM_35 , SM_37` I implanted ``10.2-cudnn7-devel-ubuntu18.04`` as base 
-image which in compressed form is about ``1.7 GB`` lighter than the latest image ``11.3.0-cudnn8-devel-ubuntu20.04``  . 
+image . 
