@@ -122,7 +122,7 @@ root@1be1f7efabf9:/myapp# gst-launch-1.0 videotestsrc ! videoconvert ! autovideo
 ```
 then a  GStreamer hello world window pops up . See the [documentation](https://gstreamer.freedesktop.org/documentation/tutorials/basic/gstreamer-tools.html?gi-language=python).
 
- ![img](gstream.png)
+ <img src=gstream.png width="200" height="200">
 
 ## OpenCV and  GStreamer debugging
 
